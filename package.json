@@ -1,0 +1,20 @@
+{
+  "name": "swagger_api_restaurant",
+  "version": "1.0.0",
+  "description": "auto doc",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "author": "arturo.soberanes01@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.1",
+    "swagger-jsdoc": "^6.2.5",
+    "swagger-ui-express": "^4.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
