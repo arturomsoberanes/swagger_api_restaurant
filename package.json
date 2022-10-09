@@ -4,7 +4,7 @@
   "description": "auto doc",
   "main": "src/app.js",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "node src/index.js"
   },
   "author": "arturo.soberanes01@gmail.com",
   "license": "MIT",
