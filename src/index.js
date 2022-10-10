@@ -3,14 +3,18 @@ const swaggerUI = require('swagger-ui-express')
 const swaggerDocument = require('./swagger.json')
 const app = express()
 const cors = require('cors')
+const config = require('./config.js')
 
 //routes for restaurant
-const restaurantsRoutes = require('./routes/restaurants')
+let restaurantsRoutes = require('./routes/restaurants')
+
+const PORT = config.PORT
+const HOST = config.HOST
+
 
 // data parse - used to parse post data
 
 var bodyParser = require('body-parser');
-app.set('port', process.env || 5000)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(cors())
@@ -18,10 +22,11 @@ app.use(cors())
 // Swagger
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
 
+
 //Restaurants
 app.use('/restaurants', restaurantsRoutes)
 
 
-app.listen(app.get('port'), () => {
-  console.log('Running in port ' + app.get('port'))
+app.listen(PORT, HOST, () => {
+  console.log('Running in port ' + PORT)
 })
